@@ -12,8 +12,7 @@ Bai thuc hanh 02 - Next.js App Router.
   - `/projects` (Du an)
   - `/contact` (Lien he)
 - Dynamic routes:
-  - `/blog/[slug]`
-  - `/blog/[...slug]`
+  - `/blog/[id]`
   - `/projects/[id]`
 - Blog list va project list tu du lieu TypeScript.
 - Co Client Component tuong tac: `components/counter.tsx`.

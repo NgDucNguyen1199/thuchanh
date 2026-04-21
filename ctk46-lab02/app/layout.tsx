@@ -27,6 +27,7 @@ export default function RootLayout({
               <Link href="/about">Giới thiệu</Link>
               <Link href="/blog">Blog</Link>
               <Link href="/projects">Dự án</Link>
+              <Link href="/guestbook">Lưu bút</Link>
               <Link href="/contact">Liên hệ</Link>
             </nav>
           </header>
