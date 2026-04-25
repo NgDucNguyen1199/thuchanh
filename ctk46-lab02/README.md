@@ -1,30 +1,46 @@
-# ctk46-lab02
+# Lab04 - Simple Blog CMS (`ctk46-lab02`)
 
-Bai thuc hanh 02 - Next.js App Router.
+Triển khai theo yêu cầu `bai-thuc-hanh-04.pdf` với Next.js App Router + Supabase.
 
-## Noi dung hoan thanh
+## Chạy dự án
 
-- Portfolio ca nhan cho sinh vien Nguyen Duc Nguyen (MSSV: 2212429, Dai hoc Da Lat).
-- Du 5 trang chinh:
-  - `/` (Trang chu)
-  - `/about` (Gioi thieu)
-  - `/blog` (Blog)
-  - `/projects` (Du an)
-  - `/contact` (Lien he)
-- Dynamic routes:
-  - `/blog/[id]`
-  - `/projects/[id]`
-- Blog list va project list tu du lieu TypeScript.
-- Co Client Component tuong tac: `components/counter.tsx`.
-- Co `loading.tsx`, `error.tsx`, `not-found.tsx`.
-- Giao dien responsive, phong cach portfolio chuyen nghiep, sinh dong.
-
-## Chay du an
+1. Cài dependencies:
 
 ```bash
 npm install
+```
+
+2. Tạo `.env.local`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+3. Khởi chạy:
+
+```bash
 npm run dev
 ```
 
-Mo `http://localhost:3000`.
+## SQL cần chạy trên Supabase
+
+1. `supabase/schema.sql`
+2. `supabase/admin_schema_update.sql`
+
+## Phạm vi chức năng đã có
+
+- Xác thực: đăng ký, đăng nhập email/GitHub, callback OAuth.
+- Middleware + phân quyền: chặn `/admin` nếu chưa đăng nhập hoặc không phải admin.
+- Admin dashboard:
+  - Tổng quan thống kê.
+  - CRUD danh mục.
+  - CRUD bài viết (draft/published, markdown content).
+  - Quản lý/xóa bình luận.
+  - Quản lý vai trò người dùng (`user`/`admin`).
+- Public:
+  - Trang chủ hiển thị bài viết đã xuất bản theo danh mục.
+  - Trang chi tiết bài viết `/posts/[slug]`.
+  - Bình luận và cập nhật realtime qua Supabase Realtime subscription.
 
